@@ -1,0 +1,12 @@
+[Unit]
+Description=XMRig Daemon
+After=network.target
+
+[Service]
+Type=forking
+GuessMainPID=no
+ExecStart=/xmrig/build/xmrig -l /var/log/xmrig/xmrig.log -B
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
